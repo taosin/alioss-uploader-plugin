@@ -1,0 +1,31 @@
+{
+  "name": "alioss-uploader-plugin",
+  "version": "1.0.0",
+  "description": "a plugin for upload static files to aliyun oss",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/taosin/alioss-uploader-plugin.git"
+  },
+  "keywords": [
+    "alioss",
+    "uploader",
+    "plugin"
+  ],
+  "author": "Nix_____",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taosin/alioss-uploader-plugin/issues"
+  },
+  "homepage": "https://github.com/taosin/alioss-uploader-plugin#readme",
+  "dependencies": {
+    "ali-oss": "^6.0.1",
+    "chalk": "^2.4.1",
+    "co": "^4.6.0",
+    "colors": "^1.3.2",
+    "lodash": "^4.17.11"
+  }
+}
