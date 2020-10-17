@@ -14,21 +14,19 @@ $ npm install alioss-uploader-plugin --save-dev
 
 ```js
 var AliOSSUploaderPlugin = require('alioss-uploader-plugin')
-var webpackConfig = {
-  entry: 'index.js',
-  output: {
-    path: 'dist',
-    filename: 'index_bundle.js'
+new AliOSSUploaderPlugin(
+  {
+    buildPath: "your buildPath",
+    region: "oss-cn-region",
+    accessKeyId: "your accessKeyId",
+    accessKeySecret: "your accessKeySecret",
+    bucket: "your bucket",
+    deleteAll: true,
+    generateObjectPath: function (filename) {
+      return filename;
+    },
   },
-  plugins: [new AliOSSUploaderPlugin({
-    buildPath:'your build path',
-    region: 'your region',
-    accessKeyId: 'your key',
-    accessKeySecret: 'your secret',
-    bucket: 'your bucket',
-    generateObjectPath: function(filename) {
-    	return filename
-  	},
-  })]
-}
+  []
+).upload();
+
 ```
