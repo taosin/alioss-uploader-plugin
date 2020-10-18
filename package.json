@@ -1,6 +1,6 @@
 {
   "name": "alioss-uploader-plugin",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "a plugin for upload static files to aliyun oss",
   "main": "index.js",
   "scripts": {},
