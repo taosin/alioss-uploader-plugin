@@ -7,7 +7,8 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/taosin/alioss-uploader-plugin.git"
-  },
+	},
+	"publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "alioss",
     "uploader",
