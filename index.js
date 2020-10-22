@@ -5,12 +5,12 @@
  * @Last Modified time: 2020-10-16 14:22:288
  */
 
-let OSS = require("ali-oss");
-let colors = require("colors");
-let _ = require("lodash");
-let path = require("path");
-let glob = require("glob");
-var fs = require("fs");
+const OSS = require("ali-oss");
+const colors = require("colors");
+const _ = require("lodash");
+const path = require("path");
+const glob = require("glob");
+const fs = require("fs");
 colors.setTheme({
   info: "green",
   warn: "yellow",
@@ -62,7 +62,6 @@ class AliOSSUploaderPlugin {
         console.log(error.red);
       }
     }
-    const paths = path.resolve(__dirname, buildPath);
     const eachFileSync = (dir, callback) => {
       // 获取该路径下所有层级文件以及子文件， * 为获取当前层级文件，** 为获取所有层级文件
       glob.sync(`${dir}/**`).map((el) => {
@@ -70,22 +69,22 @@ class AliOSSUploaderPlugin {
       });
     };
     //上传oss的新代码
-    eachFileSync(paths, (filename) => {
+    eachFileSync(buildPath, (filename) => {
       // 过滤掉文件夹
       if (fs.lstatSync(filename).isFile()) {
         _this.fileArray.push(filename);
       }
-    });
+		});
     for (let index = 0; index < _this.fileArray.length; index++) {
       const file = _this.fileArray[index];
-      const filename = file.split(paths)[1];
+      const filename = file.split(buildPath)[1];
       try {
         (async () => {
           let result = await client.put(filename, file);
           console.log("Success: " + result.name.green);
         })();
       } catch (error) {
-        console.log("error: " + error.red);
+        console.error("error: " + error.red);
       }
     }
   }

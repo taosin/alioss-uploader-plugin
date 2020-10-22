@@ -1,14 +1,16 @@
 {
   "name": "alioss-uploader-plugin",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "a plugin for upload static files to aliyun oss",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/taosin/alioss-uploader-plugin.git"
-	},
-	"publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "keywords": [
     "alioss",
     "uploader",
