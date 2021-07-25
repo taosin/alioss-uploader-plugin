@@ -22,7 +22,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.alioss_token}}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 #   publish-gpr:
 #     needs: build
